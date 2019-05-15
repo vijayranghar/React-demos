@@ -1,0 +1,102 @@
+.timeline-item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 40px auto;
+  width: 700px;
+  position: relative;
+}
+.timeline-item-container::after {
+  content: "";
+  position: absolute;
+  background: #e17b77;
+  width: 4px;
+  height: 100%;
+  left: calc(50% - 2px)
+}
+
+.timeline-item-container .timeline {
+  width: 50%;
+  position: relative;
+  padding-right: 30px;
+}
+.timeline-item-container .timeline:nth-child(odd) {
+  align-self: flex-end;
+  padding-left: 30px;
+ }
+ .timeline-item-container .timeline .circle {
+  background-color: #fff;
+  border: 3px solid #e17b77;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  z-index: 100;
+  display: inline-block;
+}
+.timeline-item-container .timeline:nth-child(odd) .circle {
+  left: -10px;
+}
+.timeline-item-container .timeline-item {
+  align-self: flex-start;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
+  background-color: rgb(255, 255, 255);
+  margin: 10px 0px;
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+}
+.timeline-item-container .header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 10px;
+   align-items: center;
+ }
+ .timeline-item-container .header .tag {
+   text-transform: uppercase;
+   padding: 3px 10px;
+   font-size: 12px;
+   font-weight: 700;
+   color: #fff;
+   position: relative;
+   left: -8px;
+   top: -8px;
+ }
+ .timeline-item-container .header .date {
+  color: #777;
+  font-size: 12px;
+  font-weight: 700; 
+ }
+ .timeline-item-container .content {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 15px 0 0;
+ }
+ .timeline-item-container .timeline-item:after{
+   content: " ";
+   background-color: #fff;
+   box-shadow: 1px -1px 1px rgba(0,0,0,.2);
+   position: absolute;
+   right: -7.5px;
+   top: calc(50% - 7.5px);
+   transform: rotate(45deg);
+   width: 15px;
+   height: 15px
+}
+.timeline-item-container .timeline:nth-child(odd) .timeline-item:after{
+  left: -7.5px;
+  transform: rotate(-145deg)
+}
+
+ .timeline-item-container .content a {
+   margin-top: 10px;
+   display: block;
+ }
+
+ .timeline-item-container .timeline:nth-child(even) .content {
+   text-align: right;
+ }
+ 
