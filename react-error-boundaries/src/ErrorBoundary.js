@@ -3,10 +3,13 @@ import React, { Component } from 'react';
 class ErrorBoundary extends Component {
   state = {
     hasError: false,
+    error:''
   }
   componentDidCatch(error, info) {
+    console.log("errro>>>>",error)
     if(error) {
-      this.setState({ error: true })
+      console.log("here")
+      this.setState({ hasError: true, error })
     }
   }
   render() {
@@ -14,7 +17,7 @@ class ErrorBoundary extends Component {
       <div>
         { this.state.hasError 
           ? 
-          <h1 style={{color: 'red'}}> Sorry!! some error occured.</h1>
+          <h1 style={{color: 'red'}}> Sorry!! Some error occured</h1>
           : this.props.children
         } 
       </div>
