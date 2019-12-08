@@ -13,7 +13,7 @@ function App() {
         {counter}
         <button onClick={() => setCounter(counter + 1)}>Add</button>
         <button onClick={() => setCounter(counter - 1)}>Subtract</button>
-        <Child />
+        <Child counter={counter} callback={() => console.log("From parent")}/>
       </header>
     </div>
   );
