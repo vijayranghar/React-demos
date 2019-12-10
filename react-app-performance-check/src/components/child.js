@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-let count = 1
+let count = 0
 let Child = (props) => {
   props.callback()
   return(

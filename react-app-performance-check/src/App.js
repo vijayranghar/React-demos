@@ -4,6 +4,7 @@ import Child from './components/child'
 
 import './App.css';
 
+const message = () => console.log("hello world")
 function App() {
   const [counter, setCounter] = useState(0)
   return (
@@ -13,7 +14,13 @@ function App() {
         {counter}
         <button onClick={() => setCounter(counter + 1)}>Add</button>
         <button onClick={() => setCounter(counter - 1)}>Subtract</button>
-        <Child counter={counter} callback={() => console.log("From parent")}/>
+        
+        {/* Wrong function inside callback will be always new hence Child will be always re-rendered */}
+
+        {/* <Child callback={() => console.log("From parent")}/> */}
+
+        {/* Correct way --> Store function inside a variable and then pass that variable */}
+        <Child callback={message}/>
       </header>
     </div>
   );
